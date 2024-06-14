@@ -1,0 +1,20 @@
+.u-text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+
+$colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  accent: $color-accent,
+  light: $color-light,
+  dark: $color-dark
+);
+
+// Generate utility text color classes dynamically
+@each $name, $color in $colors {
+  .u-text-#{$name} {
+    color: $color;
+  }
+}
