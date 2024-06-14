@@ -1,4 +1,4 @@
-import '../../styles/components/illustration-cover.scss';
+import '../styles/components/illustration-cover.scss';
 
 import source from '/images/cover-illustration.png';
 

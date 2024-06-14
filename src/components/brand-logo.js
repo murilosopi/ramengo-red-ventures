@@ -1,4 +1,4 @@
-import '../../styles/components/brand-logo.scss';
+import '../styles/components/brand-logo.scss';
 import source from '/images/logo.svg';
 
 export function BrandLogo() {    

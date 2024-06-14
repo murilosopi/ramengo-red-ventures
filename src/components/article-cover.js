@@ -1,14 +1,14 @@
-import '../../styles/components/article-cover.scss';
-import { StrongTitle } from '../StrongTitle/strong-title';
+import '../styles/components/article-cover.scss';
+import { StrongTitle } from './strong-title';
 
 export function ArticleCover() {
-    const title = StrongTitle();
-    title.innerHTML = `<span class="u-text-vertical u-text-accent column" lang="ja">
+    const titleContent = `<span class="u-text-vertical u-text-accent column" lang="ja">
                             ラーメン
                         </span>
                         <span class="column">
                             GO!
                         </span>`;
+    const title = StrongTitle(titleContent);
 
     const paragraph = document.createElement('p');
     paragraph.textContent = 'Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!';
