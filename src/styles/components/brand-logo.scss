@@ -1,0 +1,5 @@
+.c-brand-logo {
+    @include font-black();
+    color: $color-accent;
+    letter-spacing: 3px;
+}
