@@ -1,3 +1,4 @@
+import './styles/main.scss';
 import { MainBanner } from "./components/MainBanner/main-banner";
 
 const mountComponents = () => {
