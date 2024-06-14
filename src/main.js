@@ -1,10 +1,14 @@
-import './styles/main.scss';
-import { MainBanner } from "./components/MainBanner/main-banner";
+import { MainCover } from "./components/main-cover";
+import { LayoutWrapper } from './components/layout-wrapper';
 
 const mountComponents = () => {
     const app = document.querySelector('#app');
 
-    app.appendChild(MainBanner());
+    
+    const sectionCover = LayoutWrapper('l-section-cover');
+    sectionCover.appendChild(MainCover());
+
+    app.appendChild(sectionCover);
 };
 
 document.addEventListener('DOMContentLoaded', mountComponents);
