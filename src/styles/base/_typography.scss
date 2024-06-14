@@ -1,0 +1,23 @@
+@import 'fonts';
+
+@mixin font-common($weight: 400) {
+    font-family: $font-family-mplus-rounded;
+    font-style: normal;
+    font-weight: $weight;
+}
+
+@mixin font-regular() {
+    @include font-common();
+}
+
+@mixin font-medium() {
+    @include font-common(500);
+}
+
+@mixin font-extrabold() {
+    @include font-common(800);
+}
+
+@mixin font-black() {
+    @include font-common(900);
+}
