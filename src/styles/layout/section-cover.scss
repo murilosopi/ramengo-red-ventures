@@ -1,0 +1,48 @@
+.l-section-cover {
+    
+    .c-main-cover {
+        min-height: 100vh;
+        display: flex;
+
+        position: relative;
+        padding: 3rem;
+        z-index: 1;
+
+        .c-brand-logo {
+            align-self: flex-start;
+        }
+        
+        .c-article-cover {
+            margin-left: auto;
+
+            position: absolute;
+            bottom: 20%;
+            right: 71.8%;
+            width: 201px;
+            
+            .c-strong-title {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 24px;
+            }
+
+            .c-click-button {
+                min-width: 213px;
+                margin-top: 24px;
+            }
+        } 
+        
+        .c-illustration-cover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+
+            width: 673px;
+            height: 683px;
+        }
+    }
+
+
+}
