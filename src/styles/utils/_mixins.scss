@@ -1,0 +1,11 @@
+@mixin interactive-background($color) {
+	transition: background-color .2s;
+
+    &:hover {
+        background-color: darken($color, 10);
+    }
+
+    &:active {
+        background-color: darken($color, 20);
+    }
+}
