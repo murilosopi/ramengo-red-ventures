@@ -1,0 +1,22 @@
+.l-order-customizer {
+    padding: 7rem;
+
+    .c-menu-section {
+        .l-options-list {
+            margin-top: 47px;
+        }
+
+        & + .c-menu-section {
+            margin-top: 96px;
+        }
+
+        .c-strong-title {
+            margin-bottom: 4px;
+        }
+    }
+
+    .c-click-button {
+        margin: 80px auto;
+        min-width: 213px;
+    }
+}
