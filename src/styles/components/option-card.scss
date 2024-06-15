@@ -1,0 +1,41 @@
+.c-option-card {
+    text-align: center;
+    background-color: $color-light;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px #E0DBBF99;
+    cursor: pointer;
+    transition: .2s;
+
+    @include interactive-background(lighten($color-gray, 100));
+
+    .title, .price {
+        @include font-black();
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .title {
+        color: $color-primary;
+    }
+
+    .price {
+        color: $color-secondary;
+    }
+
+    &.-selected .inactive, &:not(.-selected) .active {
+        display: none;
+    }
+    
+    &.-selected {
+        @include interactive-background($color-primary);
+        background-color: $color-primary ;
+
+        .title, .description {
+            color: $color-light;
+        }
+    
+        .price {
+            color: $color-accent;
+        }
+    }
+}
