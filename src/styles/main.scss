@@ -8,4 +8,5 @@
 body {
     @include font-regular();
     color: $color-dark;
+    background-color: $color-light;
 }
