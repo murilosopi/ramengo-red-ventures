@@ -27,7 +27,9 @@
 		&.-#{$name} {
 			background-color: $color;
 			
-			@include interactive-background($color);
+			@if $name != disabled {
+				@include interactive-background($color);
+			}
 
 			&::after {
 				@if $name == primary {
@@ -35,6 +37,10 @@
 				}
 			}
 		}
+	}
+
+	&.-disabled {
+		cursor: not-allowed;
 	}
 
 	&::after {
