@@ -1,0 +1,11 @@
+.l-options-list {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    grid-template-columns: repeat(auto-fit, 320px);
+
+    .c-option-card {
+        padding: 48px 32px 40px 32px;
+    }
+}
