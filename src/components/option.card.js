@@ -26,7 +26,7 @@ export function OptionCard(option) {
 
     descriptionCard.textContent = option.description;
 
-    price.textContent = 'US' + Number(option.price).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    price.textContent = 'US$ ' + option.price;
     
 
     card.append(imageCard, imageCardActive, titleCard, descriptionCard, price);

@@ -10,8 +10,13 @@
 
     .title, .price {
         @include font-black();
-        font-size: 24px;
+        font-size: 20px;
         line-height: 24px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 16px;
     }
 
     .title {
