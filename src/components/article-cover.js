@@ -13,6 +13,7 @@ export function ArticleCover() {
     const title = StrongTitle(titleContent);
 
     const paragraph = document.createElement('p');
+    paragraph.className = 'text';
     paragraph.textContent = 'Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!';
 
     const button = ClickButton('Order now', 'primary');

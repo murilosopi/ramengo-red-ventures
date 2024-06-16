@@ -39,10 +39,58 @@
             transform: translate(-50%, -50%);
             z-index: -1;
 
-            width: 673px;
-            height: 683px;
+            max-width: 673px;
+            max-height: 683px;
         }
     }
 
+    @include respond-to('medium') {
+        .c-main-cover {
+            padding: 30px;
+            padding-bottom: 60px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
 
+            .c-brand-logo {
+                margin-bottom: 24px;
+                align-self: center;
+            }
+
+            .c-illustration-cover {
+                order: 0;
+                width: 100%;
+                position: static;  
+                transform: none;
+                margin-bottom: 12px;
+            }
+            
+            .c-article-cover {
+                order: 1;
+                width: auto;
+                text-align: center;
+                position: static;
+                transform: none;
+                margin: auto;
+
+                .c-strong-title {
+                    .column {
+                        &:nth-child(1) {
+                            margin-bottom: 11px;
+                        }
+
+                        display: block;
+                    }
+
+                    display: block;
+                    margin-bottom: 24px;
+                }
+    
+                .c-click-button {
+                    display: none;
+                }
+            }
+        }
+
+    }
 }
