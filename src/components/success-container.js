@@ -3,6 +3,7 @@ import iconSource from '/images/bowing.svg';
 import { BrandLogo } from './brand-logo';
 import { StrongTitle } from './strong-title';
 import { ClickButton } from './click-button';
+import { LayoutWrapper } from './layout-wrapper';
 
 export function SuccessContainer(orderResult) {    
     const alternativeBrand = BrandLogo(true);
@@ -20,11 +21,14 @@ export function SuccessContainer(orderResult) {
     // Rámen name title
     const ramenTitle = StrongTitle(orderResult.description, 'h2');
     ramenTitle.classList.add('u-text-accent');
+
+    const wrapper = LayoutWrapper('wrapper');
+    wrapper.append(imageResult, resultHeading, ramenTitle);
     
     // Result content section
     const result = document.createElement('section');
     result.className = 'result';
-    result.append(alternativeBrand, imageResult, resultHeading, ramenTitle);
+    result.append(alternativeBrand, wrapper);
     
     // Order section heading
     const orderHeading = document.createElement('h1');
