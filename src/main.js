@@ -16,7 +16,7 @@ const mountHomePage = () => {
     const orderCustomizer = OrderCustomizer();
     orderCustomizer.addEventListener('finished', mountSuccessPage);
 
-    sectionCover.appendChild(MainCover());
+    sectionCover.appendChild(MainCover(sectionOrder));
     sectionOrder.appendChild(orderCustomizer);
 
     app.append(sectionCover, sectionOrder);

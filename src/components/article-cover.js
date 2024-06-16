@@ -3,7 +3,7 @@ import '../styles/components/article-cover.scss';
 import { ClickButton } from './click-button';
 import { StrongTitle } from './strong-title';                
 
-export function ArticleCover() {
+export function ArticleCover(target) {
     const titleContent = `<span class="u-text-vertical u-text-accent column" lang="ja">
                             ラーメン
                         </span>
@@ -18,12 +18,7 @@ export function ArticleCover() {
 
     const button = ClickButton('Order now', 'primary');
     
-
-    button.addEventListener('click', () => {
-        const elTarget = document.querySelector('.c-menu-section');
-        
-        if (elTarget) elTarget.scrollIntoView({ behavior: 'smooth'});
-    })
+    button.addEventListener('click', () => target.scrollIntoView({ behavior: 'smooth'}));
 
     const article = document.createElement('article');
     article.className = 'c-article-cover u-text-light';
