@@ -2,6 +2,7 @@ import { LayoutWrapper } from "./layout-wrapper";
 import { MenuSection } from "./menu-section";
 import { ClickButton } from "./click-button";
 import { getIngredientsOrder, placeNewOrder } from "../actions/orders";
+import { LoadingBox } from "./loading-box";
 
 export function OrderCustomizer() {
     const selections = {
@@ -18,7 +19,9 @@ export function OrderCustomizer() {
     const customizer = LayoutWrapper('l-order-customizer');
 
     const finishOrder = async () => {
-        const detail = await placeNewOrder(selections.broth.idChoice, selections.protein.idChoice)
+        const loading = customizer.appendChild(LoadingBox());
+        const detail = await placeNewOrder(selections.broth.idChoice, selections.protein.idChoice);
+        loading.remove();
 
         if (detail) customizer.dispatchEvent(new CustomEvent('finished', { detail }));
     };
