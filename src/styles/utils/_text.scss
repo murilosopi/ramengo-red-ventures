@@ -7,16 +7,8 @@
   text-align: center;
 }
 
-$colors: (
-  primary: $color-primary,
-  secondary: $color-secondary,
-  accent: $color-accent,
-  light: $color-light,
-  dark: $color-dark
-);
-
 // Generate utility text color classes dynamically
-@each $name, $color in $colors {
+@each $name, $color in $all-colors {
   .u-text-#{$name} {
     color: $color;
   }

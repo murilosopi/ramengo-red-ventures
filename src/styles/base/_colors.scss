@@ -14,3 +14,11 @@ $color-accent-dark: darken($color-accent, 20%);
 $color-dark: #000000;
 $color-light: #FAFAED;
 $color-gray: #C5C5C5;
+
+$all-colors: (
+    primary: $color-primary,
+    secondary: $color-secondary,
+    accent: $color-accent,
+    light: $color-light,
+    dark: $color-dark
+);
