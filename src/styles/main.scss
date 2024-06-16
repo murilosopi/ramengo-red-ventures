@@ -4,6 +4,7 @@
 
 @import './utils/text';
 @import './utils/mixins';
+@import './utils/background';
 
 body {
     @include font-regular();

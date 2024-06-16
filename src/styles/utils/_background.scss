@@ -1,0 +1,6 @@
+// Generate utility text color classes dynamically
+@each $name, $color in $all-colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
