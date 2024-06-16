@@ -1,3 +1,4 @@
+import '../styles/layout/order-customizer.scss';
 import { LayoutWrapper } from "./layout-wrapper";
 import { MenuSection } from "./menu-section";
 import { ClickButton } from "./click-button";

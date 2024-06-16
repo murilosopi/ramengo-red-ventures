@@ -1,3 +1,5 @@
+import './styles/layout/section-cover.scss';
+import './styles/layout/success-section.scss';
 import { LayoutWrapper } from './components/layout-wrapper';
 import { MainCover } from "./components/main-cover";
 import { OrderCustomizer } from './components/order-customizer';

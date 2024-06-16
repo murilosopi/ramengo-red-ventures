@@ -1,3 +1,4 @@
+import '../styles/layout/options-list.scss';
 import { GrabbingScroller } from "./grabbing-scroller";
 import { LayoutWrapper } from "./layout-wrapper";
 import { OptionCard } from "./option.card";
