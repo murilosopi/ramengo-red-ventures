@@ -1,5 +1,5 @@
 .l-order-customizer {
-    padding: 7rem 0;
+    padding: 115px 0;
 
     .c-menu-section {
 
@@ -39,7 +39,31 @@
     }
 
     .c-click-button {
-        margin: 80px auto;
+        margin: auto;
+        margin-top: 80px;
         min-width: 213px;
+    }
+
+    @include respond-to('large') {
+        padding: 40px 0;
+
+        .c-menu-section {
+            &+.c-menu-section {
+                margin-top: 62px;
+            }
+
+            .c-strong-title {
+                margin-bottom: 16px;
+            }
+            .c-grabbing-scroller {
+                margin-top: 32px;
+            }
+        }
+
+        .c-click-button {
+            margin-top: 48px;
+        }
+
+        
     }
 }
