@@ -1,12 +1,13 @@
 const url = 'https://api.tech.redventures.com.br';
 
-const init = (method) => ({
+const init = (method, params) => ({
     headers: new Headers({
         'Content-Type': 'application/json',
         'x-api-key': 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf'
     }),
     mode: 'cors',
-    method
+    method,
+    body: params ? JSON.stringify(params) : null
 })
 
 const http = {
