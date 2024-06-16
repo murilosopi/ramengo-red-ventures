@@ -1,0 +1,14 @@
+.c-scroller-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #E0DBBF;
+    transition: .2s;
+    cursor: pointer;
+    
+    &.-active {
+        width: 36px;
+        border-radius: 8px;
+        background-color: $color-secondary;
+    }
+}
