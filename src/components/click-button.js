@@ -1,4 +1,4 @@
-import '../styles/click-button.scss';
+import '../styles/components/click-button.scss';
 
 export function ClickButton(content, variant = 'primary') {
     
