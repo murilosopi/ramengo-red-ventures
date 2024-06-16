@@ -5,6 +5,13 @@ import { StrongTitle } from './strong-title';
 import { ClickButton } from './click-button';
 import { LayoutWrapper } from './layout-wrapper';
 
+/**
+ * 
+ * @param {Object} orderResult
+ * @param {Object} orderResult.image result image source
+ * @param {Object} orderResult.description result description text
+ * @returns 
+ */
 export function SuccessContainer(orderResult) {    
     const alternativeBrand = BrandLogo(true);
 

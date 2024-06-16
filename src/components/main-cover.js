@@ -4,6 +4,10 @@ import { BrandLogo } from './brand-logo';
 import { ArticleCover } from './article-cover';
 import { IllustrationCover } from './illustration-cover';
 
+/**
+ * 
+ * @param {HTMLElement} target element for scrolling to by a click button of ArticleCover component
+ */
 export function MainCover(target) {    
     const cover = document.createElement('section');
 
