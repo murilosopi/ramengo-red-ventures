@@ -1,17 +1,36 @@
 import { LayoutWrapper } from './components/layout-wrapper';
 import { MainCover } from "./components/main-cover";
 import { OrderCustomizer } from './components/order-customizer';
+import { SuccessContainer } from './components/success-container';
 
-const mountComponents = () => {
-    const app = document.querySelector('#app');
+const app = document.querySelector('#app');
+
+const mountHomePage = () => {
+    while (app.childNodes.length != 0) app.firstChild.remove();
 
     const sectionCover = LayoutWrapper('l-section-cover');
-    sectionCover.appendChild(MainCover());
-
     const sectionOrder = LayoutWrapper('l-section-order');
-    sectionOrder.appendChild(OrderCustomizer());
+
+    const orderCustomizer = OrderCustomizer();
+    orderCustomizer.addEventListener('finished', mountSuccessPage);
+
+    sectionCover.appendChild(MainCover());
+    sectionOrder.appendChild(orderCustomizer);
 
     app.append(sectionCover, sectionOrder);
 };
 
-document.addEventListener('DOMContentLoaded', mountComponents);
+const mountSuccessPage = e => {
+    const data = e.detail;
+
+    while (app.childNodes.length != 0) app.firstChild.remove();
+
+    const sectionSuccess = LayoutWrapper('l-success-section');
+    const successContainer = sectionSuccess.appendChild(SuccessContainer(data));
+
+    successContainer.addEventListener('new-order', mountHomePage);
+
+    app.append(sectionSuccess);
+}
+
+document.addEventListener('DOMContentLoaded', mountHomePage);
