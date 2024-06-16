@@ -1,3 +1,4 @@
+import { GrabbingScroller } from "./grabbing-scroller";
 import { LayoutWrapper } from "./layout-wrapper";
 import { OptionCard } from "./option.card";
 import { StrongTitle } from "./strong-title";
@@ -15,33 +16,43 @@ export function MenuSection(menu) {
     
     const text = document.createElement('p');
     text.textContent = menu.description;
+    text.className = 'text';
     
     const section = document.createElement('section');
     section.classList.add('c-menu-section', 'u-text-center');
     
     const list = LayoutWrapper('l-options-list');
-    menu.options.forEach(o => {
-        const card = OptionCard(o);
 
-        list.appendChild(card);
-
-        card.addEventListener('click', () => {                
-            const oldChoice = menu.idChoice;
-
-            if (oldChoice) 
-                list.querySelector('.-selected').classList.remove('-selected');
-
-            menu.idChoice = oldChoice == o.id ? null : o.id;
-
-            if (menu.idChoice) 
-                card.classList.add('-selected');
-
-            section.dispatchEvent(new CustomEvent('choose'));
+    const menuOptionsToElementsArray = () => {
+        return menu.options.map(optionData => {
+            const card = OptionCard(optionData);
+            
+            const updateMenuChoice = () => {                
+                const oldChoice = menu.idChoice;
+        
+                if (oldChoice) 
+                    list.querySelector('.-selected').classList.remove('-selected');
+        
+                menu.idChoice = oldChoice == optionData.id ? null : optionData.id;
+        
+                if (menu.idChoice) 
+                    card.classList.add('-selected');
+        
+                section.dispatchEvent(new CustomEvent('choose'));
+            };
+            card.addEventListener('click', updateMenuChoice);
+            
+            return card;
         });
+    }
 
-    });
+    const allCards = menuOptionsToElementsArray();
 
-    section.append(title, text, list);
+    list.append(...allCards);
+
+    const scroller = GrabbingScroller(list, { controls: true, targets: allCards });
+
+    section.append(title, text, scroller);
 
     return section;
 }

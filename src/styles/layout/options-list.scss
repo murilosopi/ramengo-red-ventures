@@ -4,6 +4,27 @@
     align-items: center;
     gap: 64px;
     grid-template-columns: repeat(auto-fit, 320px);
+    
+    @include respond-to('xlarge') {
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, 288px);
+    }
+
+    @include respond-to('large') {
+        display: flex;
+        justify-content: flex-start;
+        width: 100vw;
+    
+        .c-option-card {
+            min-width: 288px;
+
+            &.-active {
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+                cursor: -moz-grabbing;
+            }
+        }
+    }
 
     .c-option-card {
         display: flex;
