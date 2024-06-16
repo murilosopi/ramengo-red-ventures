@@ -6,6 +6,8 @@ import { SuccessContainer } from './components/success-container';
 const app = document.querySelector('#app');
 
 const mountHomePage = () => {
+    scrollTo({ left: 0, top: 0});
+
     while (app.childNodes.length != 0) app.firstChild.remove();
 
     const sectionCover = LayoutWrapper('l-section-cover');
@@ -21,6 +23,7 @@ const mountHomePage = () => {
 };
 
 const mountSuccessPage = e => {
+    scrollTo({ left: 0, top: 0});
     const data = e.detail;
 
     while (app.childNodes.length != 0) app.firstChild.remove();
