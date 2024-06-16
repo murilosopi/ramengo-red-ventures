@@ -15,7 +15,14 @@ export function ArticleCover() {
     const paragraph = document.createElement('p');
     paragraph.textContent = 'Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!';
 
-    const button = ClickButton('Order now');
+    const button = ClickButton('Order now', 'primary');
+    
+
+    button.addEventListener('click', () => {
+        const elTarget = document.querySelector('.c-menu-section');
+        
+        if (elTarget) elTarget.scrollIntoView({ behavior: 'smooth'});
+    })
 
     const article = document.createElement('article');
     article.className = 'c-article-cover u-text-light';
