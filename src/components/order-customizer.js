@@ -57,7 +57,7 @@ export function OrderCustomizer() {
         customizer.appendChild(section);
     };
 
-    const allPromises = Object.keys(selections).map(type => handleSelectionType(type));
+    const allPromises = Object.keys(selections).map(async type => await handleSelectionType(type));
 
     Promise.all(allPromises).then(() => customizer.appendChild(button));
 
