@@ -50,7 +50,7 @@ export function OrderCustomizer() {
         section.addEventListener('choose', () => {
             updateButtonState();
 
-            if (section.nextElementSibling.classList.contains('c-menu-section'))
+            if (section.nextElementSibling.classList.contains('c-menu-section') && menu.idChoice)
                 section.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
         });
 
