@@ -1,0 +1,28 @@
+.c-loading-spinner {
+    border-width: 8px;
+    border-style: solid;
+    border-left-color: $color-gray;
+    border-top-color: $color-gray;
+    border-radius: 50%;
+    width: 80px;
+    aspect-ratio: 1;
+    margin: auto;
+    animation: spin 2s cubic-bezier(.66,-0.63,.36,.7) infinite;
+
+    @each $name, $color in $all-colors {
+        &.-#{$name} {
+            border-right-color: $color;
+            border-bottom-color: $color;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
