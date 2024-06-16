@@ -10,6 +10,7 @@ export function SuccessContainer(orderResult) {
 
     // Result rámen image
     const imageResult = new Image();
+    imageResult.className = 'image';
     imageResult.src = orderResult.image;
     imageResult.alt = `${orderResult.description} image`;
     
@@ -56,7 +57,7 @@ export function SuccessContainer(orderResult) {
     order.append(orderIcon, orderHeading, orderStrongText, orderText, buttonNewOrder) 
     
     const container = document.createElement('main');
-    container.className = 'c-success-feedback';
+    container.className = 'c-success-container';
     container.append(result, order);
 
     const handleNewOrder = () => {
