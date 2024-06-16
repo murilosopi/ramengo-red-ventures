@@ -1,7 +1,7 @@
 import { LayoutWrapper } from "./layout-wrapper";
 import { MenuSection } from "./menu-section";
 import { ClickButton } from "./click-button";
-import { getIngredientsOrder } from "../actions/orders";
+import { getIngredientsOrder, placeNewOrder } from "../actions/orders";
 
 export function OrderCustomizer() {
     const selections = {
@@ -17,12 +17,15 @@ export function OrderCustomizer() {
 
     const customizer = LayoutWrapper('l-order-customizer');
 
+    const finishOrder = async () => {
+        const detail = await placeNewOrder(selections.broth.idChoice, selections.protein.idChoice)
+
+        if (detail) customizer.dispatchEvent(new CustomEvent('finished', { detail }));
+    };
+
     const button = ClickButton('Place my order', 'disabled');
     button.disabled = true;
-    button.addEventListener('click', () => {
-        const isDisabled = !selections.broth.idChoice || !selections.protein.idChoice;
-        if (isDisabled) return;
-    });
+    button.addEventListener('click', finishOrder);
 
     const updateButtonState = () => {
         const isDisabled = !selections.broth.idChoice || !selections.protein.idChoice;
