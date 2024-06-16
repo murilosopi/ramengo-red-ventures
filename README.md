@@ -17,5 +17,5 @@ npm run build
 
 ## Preview distribuition version built
 ```console
-npm run build
+npm run preview
 ```
