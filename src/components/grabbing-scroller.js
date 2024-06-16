@@ -43,7 +43,8 @@ export function GrabbingScroller(element, { controls = false, targets = [] }) {
         control.down = false;
 
         if (controls) {
-            const widthPerTarget = element.clientWidth / targets.length;
+            const totalScrollWidth = element.scrollWidth - element.clientWidth;
+            const widthPerTarget = totalScrollWidth / targets.length; 
 
             const indexControlActive = Math.ceil(element.scrollLeft / widthPerTarget) || 1;
             
@@ -52,7 +53,6 @@ export function GrabbingScroller(element, { controls = false, targets = [] }) {
     }
 
     const toggleActiveControl = e => {
-        console.log('aqui');
         const element = e.target.closest('.c-scroller-button');
 
         if (!element) return;
