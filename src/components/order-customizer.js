@@ -39,6 +39,12 @@ export function OrderCustomizer() {
         if (!isDisabled) button.scrollIntoView({ behavior: 'smooth'});
     };
 
+    const nextSelection = (s) => {
+        const el = s.nextElementSibling;
+        if (el && el.classList.contains('c-menu-section'))
+            el.scrollIntoView({ behavior: 'smooth' });
+    }
+
     const handleSelectionType = async (type) => {
         const menu = selections[type];
 
@@ -50,8 +56,7 @@ export function OrderCustomizer() {
         section.addEventListener('choose', () => {
             updateButtonState();
 
-            if (section.nextElementSibling.classList.contains('c-menu-section') && menu.idChoice)
-                section.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+            if (menu.idChoice) nextSelection(section);
         });
 
         customizer.appendChild(section);
