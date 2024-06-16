@@ -35,6 +35,8 @@ export function OrderCustomizer() {
         button.disabled = isDisabled;
         button.classList.toggle('-disabled', isDisabled);
         button.classList.toggle('-primary', !isDisabled);
+
+        if (!isDisabled) button.scrollIntoView({ behavior: 'smooth'});
     };
 
     const handleSelectionType = async (type) => {
@@ -45,7 +47,12 @@ export function OrderCustomizer() {
 
         const section = MenuSection(menu);
 
-        section.addEventListener('choose', updateButtonState);
+        section.addEventListener('choose', () => {
+            updateButtonState();
+
+            if (section.nextElementSibling.classList.contains('c-menu-section'))
+                section.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+        });
 
         customizer.appendChild(section);
     };
