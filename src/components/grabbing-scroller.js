@@ -31,13 +31,13 @@ export function GrabbingScroller(element, { controls = false, targets = [] }) {
         control.scrollLeft = element.scrollLeft;
     });
 
-    scroller.addEventListener('mousemove', e => {
+    const move = e => {
         if (!control.down) return;
 
         const walk = e.pageX - element.offsetLeft;
 
         element.scrollLeft = control.scrollLeft + (control.start - walk) * 1.3;
-    })
+    };
 
     const stopGrab = () => {
         control.down = false;
@@ -64,8 +64,13 @@ export function GrabbingScroller(element, { controls = false, targets = [] }) {
         element.classList.add('-active');
     }
 
-    scroller.addEventListener('mouseup', stopGrab);
+    scroller.addEventListener('mousemove', move);
+    scroller.addEventListener('touchmove', move);
 
+    scroller.addEventListener('mouseup', stopGrab);
+    scroller.addEventListener('touchend', stopGrab);
+    
+    scroller.addEventListener('touchcancel', stopGrab);
     scroller.addEventListener('mouseleave', stopGrab);
 
     scroller.addEventListener('click', toggleActiveControl);
