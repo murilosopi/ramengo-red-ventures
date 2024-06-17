@@ -13,7 +13,6 @@
     @include respond-to('large') {
         display: flex;
         justify-content: flex-start;
-        width: 100vw;
     
         .c-option-card {
             min-width: 288px;
